@@ -1,0 +1,32 @@
+import random
+
+def main():
+    RPS=["Rock","Paper","Scissors"]
+    MaxScore=int(input("enter max score that winner must achieve\n"))
+    PS=0 #playerscore
+    CS=0 #computerscore
+    while (PS!=MaxScore and CS!=MaxScore):
+        cc=random.choice(RPS) #computerchoice
+        pc=int(input("choose : 1.rock\t2.paper\t3.scissors\n")) #playerchoice
+        if pc==1:
+            if cc==RPS[1]:
+                CS+=1
+            elif cc==RPS[2]:
+                PS+=1
+        elif pc==2:
+            if cc==RPS[0]:
+                PS+=1
+            elif cc==RPS[2]:
+                CS+=1
+        elif pc==3:
+            if cc==RPS[0]:
+                CS+=1
+            elif cc==RPS[1]:
+                PS+=1
+        print('score now is :\n YOU {}\nCOMPUTER {} '.format(PS,CS))
+    print('Result:\n')
+    if (PS>=CS):("---------------------------------------------------------------------------\nCONGATS! YOU WIN\nFinal score is :\nYOU: {}\nCOMPUTER: {}".format(PS,CS))
+    else : print("YOU LOSE :( \n Better Luck Next Time\nFinal score is :\nYOU: {}\nCOMPUTER: {}".format(PS,CS))
+    final=int(input("GAME ENDED \n (1).Restart\t(2)Menu\n"))
+    if final==1:RockPaperScissors()
+if __name__ == '__main__':main()
